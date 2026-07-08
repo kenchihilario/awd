@@ -16,7 +16,7 @@
 <p>Laravel backend server</p>
 
 <br>
-<p>IP Address: 192.168.20.126:8000</p>
+<p>IP Address: {{ request()->getHost() }}:{{ request()->getPort() }}</p>
 <p>PHP v8.3.32</p>
 <p>Apache/2.4.67 (Debian)</p>
 <p>mysql  Ver 8.0.46</p>

@@ -1,4 +1,10 @@
+import { headers } from "next/headers";
+
 export default async function Home() {
+  const headersList = await headers();
+
+  const host = headersList.get("host") ?? "localhost:3000";
+
   return (
     <main
       style={{
@@ -10,15 +16,20 @@ export default async function Home() {
         alignItems: "center",
         textAlign: "center",
         fontFamily: "Arial, sans-serif",
-      }}>
+      }}
+    >
       <div>
-      <h1>Frontend</h1>
+        <h1>Frontend</h1>
         <h1>Kenchi Paul M. Hilario</h1>
         <h2>Laravel + Next.js Docker Server</h2>
-        <br/>
+
+        <br />
+
         <h3>Server Information</h3>
-        <p>IP Address: 192.168.20.126:3001 or 192.168.20.126</p>
-        <br/>
+        <p>IP Address: {host}</p>
+
+        <br />
+
         <h3>Software Versions</h3>
         <p>PHP v8.3.32</p>
         <p>Apache v2.4.67 (Debian)</p>
